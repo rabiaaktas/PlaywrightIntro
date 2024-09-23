@@ -20,6 +20,14 @@ test.describe("Basic funcitonalities", () => {
     await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
   });
 
+  test('Click "Community" tab', async ({page}) => {
+    // Get link and click it
+    await page.getByRole('link', { name: 'Community' }).click()
+    //Confirm page is open
+    await expect(page.getByText(/Playwright Community/)).toBeVisible()
+  });
+
+  
 
 });
 
